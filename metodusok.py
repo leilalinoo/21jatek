@@ -12,14 +12,15 @@
 #
 #     return gPontok, jPontok
 
-def pontokosszege2(lapok):
-    pontok = 0
+def pontokosszege2(lapok)->int:
+    pontok:int = 0
     for i in range(len(lapok)):
         pontok += lapok[i]
 
     return pontok
-def eredmeny(gPontok, jPontok):
-
+def eredmeny(gPontok:[int], jPontok:[int]):
+    jPontok:int = pontokosszege2(jPontok)
+    gPontok:int = pontokosszege2(gPontok)
     if jPontok > 21:
         print("játékos vesztett")
 
