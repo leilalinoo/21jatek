@@ -25,14 +25,14 @@ def tesztesetek():
     jatekos_vesztett_teszt()
 
 def jatekos_vesztett_teszt():
-    jatekos = [10, 9, 3]
+    jatekos = [10, 9]
     gep = [10, 6]
     vart_eredmeny = "játékos vesztett"
     kapott_eredmeny = eredmeny(gep,jatekos)
 
     if kapott_eredmeny == vart_eredmeny:
-        print("a teszt sikeres")
+        print(" \"játékos vesztett\" teszt sikeres")
     else:
-        print("a teszt megbukott")
+        print("\"játékos vesztett\" teszt megbukott")
 
 tesztesetek()
