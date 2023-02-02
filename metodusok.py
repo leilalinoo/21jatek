@@ -17,6 +17,12 @@ def eredmeny(gLapok: [int], jLapok: [int]):
         vegeredmeny = "gép vesztett"
     elif jPontok > 21:
         vegeredmeny = "játékos vesztett"
+    elif gPontok > jPontok:
+        vegeredmeny = "kisebb mint 21: gép nyert"
+    elif jPontok > gPontok:
+        vegeredmeny = "kisebb mint 21: játékos nyert"
+    elif jPontok == gPontok:
+        vegeredmeny = "döntetlen"
 
     return vegeredmeny
 
@@ -29,7 +35,8 @@ def tesztesetek():
     gep_vesztett_teszt()
     gep_vesztett2()
     gep_vesztett3()
-    kisebb21()
+    kisebb21gepnyer()
+    dontelen()
 
 def jatekos_vesztett_teszt():
     gep = [10, 6]
@@ -73,7 +80,7 @@ def j_veszt_3():
 
 def gep_vesztett_teszt():
     gep = [10, 10, 2]
-    jatekos = [10, 1]
+    jatekos = [10, 6]
     vart_eredmeny = "gép vesztett"
     kapott_eredmeny = eredmeny(gep, jatekos)
 
@@ -107,23 +114,29 @@ def gep_vesztett3():
         print("3. \"gép vesztett\" teszt megbukott")
 
 
-def kisebb21():
+def kisebb21gepnyer():
     gep = [10, 8]
     jatekos = [10, 1]
-    geppont = 0
-    jatekospont = 0
+    vart_eredmeny = "kisebb mint 21: gép nyert"
+    kapott_eredmeny = eredmeny(gep, jatekos)
 
-    for i in range(len(gep)):
-        geppont += gep[i]
+    if vart_eredmeny == kapott_eredmeny:
+        print("kisebb mint 21: gép nyert")
+    else:
+        print("kisebb mint 21: játékos nyert")
 
-    for i in range(len(jatekos)):
-        geppont += jatekos[i]
 
-    if geppont < 21 and jatekospont < 21:
-        if geppont > jatekospont:
-            print("kisebb mint 21 teszt: gep nyert")
-        elif jatekospont > geppont:
-            print("kisebb mint 21 teszt: gep nyert")
+def dontelen():
+    gep = [10, 1, 9]
+    jatekos = [10, 10]
+    vart_eredmeny = "döntetlen"
+    kapott_eredmeny = eredmeny(gep, jatekos)
+
+    if vart_eredmeny == kapott_eredmeny:
+        if len(gep) < len(jatekos):
+            print("döntetlen teszt: gép nyert")
+        else:
+            print("döntetlen teszt: jatékos nyert")
 
 
 tesztesetek()
