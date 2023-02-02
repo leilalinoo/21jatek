@@ -23,10 +23,11 @@ def eredmeny(gLapok: [int], jLapok: [int]):
 # teszt esetek
 def tesztesetek():
     jatekos_vesztett_teszt()
+    j_vesztett_2()
 
 def jatekos_vesztett_teszt():
-    jatekos = [10, 9]
     gep = [10, 6]
+    jatekos = [10, 9, 5]
     vart_eredmeny = "játékos vesztett"
     kapott_eredmeny = eredmeny(gep,jatekos)
 
@@ -35,4 +36,16 @@ def jatekos_vesztett_teszt():
     else:
         print("\"játékos vesztett\" teszt megbukott")
 
+def j_vesztett_2():
+    gep = [10, 6, 10]
+    jatekos = [10, 9, 5]
+
+    if len(gep)<len(jatekos):
+        print(" \"játékos vesztett\" teszt sikeres")
+    else:
+        print("\"játékos vesztett\" teszt megbukott")
+
+
+
 tesztesetek()
+
