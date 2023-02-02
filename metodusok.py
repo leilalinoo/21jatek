@@ -20,32 +20,48 @@ def eredmeny(gLapok: [int], jLapok: [int]):
 
     return vegeredmeny
 
+
 # teszt esetek
 def tesztesetek():
     jatekos_vesztett_teszt()
     j_vesztett_2()
+    j_veszt_3()
+
 
 def jatekos_vesztett_teszt():
     gep = [10, 6]
-    jatekos = [10, 9, 5]
+    jatekos = [10, 1]
     vart_eredmeny = "játékos vesztett"
-    kapott_eredmeny = eredmeny(gep,jatekos)
+    kapott_eredmeny = eredmeny(gep, jatekos)
 
     if kapott_eredmeny == vart_eredmeny:
-        print(" \"játékos vesztett\" teszt sikeres")
+        print("1. \"játékos vesztett\" teszt sikeres")
     else:
-        print("\"játékos vesztett\" teszt megbukott")
+        print("1. \"játékos vesztett\" teszt megbukott")
+
 
 def j_vesztett_2():
-    gep = [10, 6, 10]
-    jatekos = [10, 9, 5]
+    gep = [10, 10, 1]
+    jatekos = [10, 9]
+    vart_eredmeny = "játékos vesztett"
+    kapott_eredmeny = eredmeny(gep, jatekos)
 
-    if len(gep)<len(jatekos):
-        print(" \"játékos vesztett\" teszt sikeres")
+    if kapott_eredmeny == vart_eredmeny:
+        print("2. \"játékos vesztett\" teszt sikeres")
     else:
-        print("\"játékos vesztett\" teszt megbukott")
+        print("2. \"játékos vesztett\" teszt megbukott")
 
+
+def j_veszt_3():
+    gep = [10, 10]
+    jatekos = [10, 10, 1]
+    vart_eredmeny = "játékos vesztett"
+    kapott_eredmeny = eredmeny(gep, jatekos)
+
+    if kapott_eredmeny == vart_eredmeny:
+        print("3. \"játékos vesztett\" teszt sikeres")
+    else:
+        print("3. \"játékos vesztett\" teszt megbukott")
 
 
 tesztesetek()
-
